@@ -557,7 +557,7 @@ public class SwiftyLabel: UIView, NSLayoutManagerDelegate, UIGestureRecognizerDe
                 self.layoutManager.drawBackgroundForGlyphRange(range, atPoint: textOrigin)
                 self.layoutManager.drawGlyphsForGlyphRange(range, atPoint: textOrigin)
                 
-                let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()
+                let image:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
                 UIGraphicsEndImageContext()
                 
                 dispatch_async(dispatch_get_main_queue(), { () -> Void in
