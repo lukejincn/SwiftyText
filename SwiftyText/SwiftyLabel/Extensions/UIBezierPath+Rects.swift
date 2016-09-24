@@ -14,7 +14,7 @@ extension UIBezierPath {
         
         let rectCount = rects.count
         
-        for var i = 0; i < rectCount; i++ {
+        for i in 0 ..< rectCount {
             var previousRectValue:CGRect? = nil
             var nextRectValue:CGRect? = nil
             if i > 0 {

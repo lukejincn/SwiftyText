@@ -50,7 +50,7 @@ class SwiftyTextTapRecognizer: SwiftyTextGestureRecognizer {
                     if timeoutTimer != nil {
                         timeoutTimer?.invalidate()
                     }
-                    timeoutTimer = NSTimer.scheduledTimerWithTimeInterval(0.27, target: self, selector: "handleTimeout:", userInfo: nil, repeats: false)
+                    timeoutTimer = NSTimer.scheduledTimerWithTimeInterval(0.27, target: self, selector: #selector(SwiftyTextTapRecognizer.handleTimeout(_:)), userInfo: nil, repeats: false)
                 }else if touch.tapCount == numberOfTapsRequired {
                     if timeoutTimer != nil {
                         timeoutTimer?.invalidate()

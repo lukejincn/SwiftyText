@@ -274,20 +274,20 @@ public class SwiftyLabel: UIView, NSLayoutManagerDelegate, UIGestureRecognizerDe
         
         self.singleTapRecognizer.numberOfTapsRequired = 1
         self.singleTapRecognizer.delegate = self
-        self.singleTapRecognizer.addTarget(self, action: "handleSingleTap:")
+        self.singleTapRecognizer.addTarget(self, action: #selector(SwiftyLabel.handleSingleTap(_:)))
         self.addGestureRecognizer(self.singleTapRecognizer)
 
         self.longPressRecognizer.delegate = self
-        self.longPressRecognizer.addTarget(self, action: "handleLongPress:")
+        self.longPressRecognizer.addTarget(self, action: #selector(SwiftyLabel.handleLongPress(_:)))
         self.addGestureRecognizer(self.longPressRecognizer)
         
         self.touchRecognizer.delegate = self
-        self.touchRecognizer.addTarget(self, action: "handleTouch:")
+        self.touchRecognizer.addTarget(self, action: #selector(SwiftyLabel.handleTouch(_:)))
         self.addGestureRecognizer(self.touchRecognizer)
         
         self.singleTapRecognizer.requireGestureRecognizerToFail(self.longPressRecognizer)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "voiceOverStatusChanged", name: UIAccessibilityVoiceOverStatusChanged, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SwiftyLabel.voiceOverStatusChanged), name: UIAccessibilityVoiceOverStatusChanged, object: nil)
     }
     
     override public init(frame: CGRect) {
